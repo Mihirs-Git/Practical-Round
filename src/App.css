@@ -1,14 +1,35 @@
-
 .avatar
 {
-  border: 2px;
-  border-radius: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
   text-transform: uppercase;
-  background-color: red;
-  padding: 10%;
 }
 
-.loginButton
+.update:hover
 {
-  float: right;
+  color: #28a745 ;
+}
+
+.logout:hover
+{
+  text-decoration: none;
+}
+
+.dropdown-item:hover
+{
+  background-color: #343a40;
+  color: #f8f9fa;
+  text-decoration: none;
+}
+
+.login
+{
+  background-color: #343a40;
+  color: #f8f9fa;
+  border-radius: 5%;
 }

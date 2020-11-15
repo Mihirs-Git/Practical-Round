@@ -8,7 +8,7 @@ function Main(props)
     return(
 
         <Switch>
-            <Route path="/login" component={Login}></Route>
+            <Route path="/login" component={() => <Login logout={false} />}></Route>
             <Route path="/dashboard" component={Dashboard}></Route>
             <Redirect to="/login"></Redirect>
         </Switch>
