@@ -12,7 +12,7 @@ class Login extends Component {
             password: '',
             passwordError: '',
             validCredentials: false,
-            invalidCredentials: "",
+            invalidCredentials: ""
         }
     }
 
@@ -95,7 +95,7 @@ class Login extends Component {
         {
             if(this.state.password === "admin@123")
             {
-                this.setState({ validCredentials: true });    
+                this.setState({ validCredentials: true, login: true });    
             }
             else
             {
@@ -108,7 +108,7 @@ class Login extends Component {
     render()
     {
 
-        if(this.state.validCredentials && !this.props.logout)
+        if(this.state.validCredentials)
         {
             return <Dashboard email={this.state.email}></Dashboard>
         }
