@@ -38,6 +38,20 @@ class Dashboard extends Component
         this.setState({isDropDownOpen: !this.state.isDropDownOpen});
     }
  
+    deleteRecord = (id) => {
+        
+        Axios.delete('https://reqres.in/api/users/' + id)
+        .then(() => {
+
+            this.setState({
+                users: this.state.users.filter(user => user.id !== id)
+            })
+
+        })
+        .catch(err => console.log(err));
+    
+    }
+
     getData = () => {
         
         Axios.get('https://reqres.in/api/users')
@@ -192,10 +206,16 @@ class Dashboard extends Component
                         <td>{user.email}</td>
                         <td>{user.first_name}</td>
                         <td>{user.last_name}</td>
-                        <td><img src={user.avatar} alt="Avatar"></img></td>
-                        <td><span className="fa fa-edit update" onClick={() => this.toggleModalUpdate(user.id, user.first_name, user.last_name)}></span></td>
-                    </tr>
-                        
+                        <td>
+                            <img src={user.avatar} alt="Avatar"></img>
+                        </td>
+                        <td>
+                            <span className="fa fa-edit update" onClick={() => this.toggleModalUpdate(user.id, user.first_name, user.last_name)}></span> 
+                        </td>
+                        <td>                               
+                            <span className="fa fa-times delete" onClick={() => this.deleteRecord(user.id)}></span>
+                        </td>
+                    </tr>  
                 );
             }
             else

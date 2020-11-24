@@ -15,6 +15,11 @@
   color: #28a745 ;
 }
 
+.delete:hover
+{
+  color: #dc3545;
+}
+
 .logout:hover
 {
   text-decoration: none;
